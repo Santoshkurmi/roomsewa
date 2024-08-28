@@ -72,7 +72,7 @@
         <div class="property-info">
         <h4><b><?php echo $property['property_type']; ?></b></h4>
         <p><?php echo $property['city'].', '.$property['district']; ?></p>
-        <a href="/property/<?php echo $property['property_id']; ?>" class="btn">View Property</a>
+        <a href="/property/<?php echo $property['id']; ?>" class="btn">View Property</a>
         </div>
     </div>
 

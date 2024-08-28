@@ -1,52 +1,15 @@
-<style>
-  .recommendation-loadmore {
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px;
-
-  }
-
-  .myclass {
-    box-shadow: black;
-    border-radius: 10px;
-    stop-color: red;
-    color: hotpink;
-    background-color: black;
-    font-size: 2.5rem;
-
-  }
-
-  .myclass :hover {
-    background-color: orange;
-    border-radius: 10px;
-    color: white;
-
-  }
-
-  .design {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
-
-  }
-</style>
-
-
-<?php
-include('config/config.php');
-include('review-engine.php');
-include('booking-engine.php');
-
-?>
+<link rel="stylesheet" href="/public/css/view_propery.css">
 
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6">
+      
 
+      <?php if(isset($msg)){?>
+      <h3 style="text-align:center;color: green;">Thank you for giving reviews</h3>
+        <?php }?>
 
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -60,15 +23,10 @@ include('booking-engine.php');
         <div class="carousel-inner" role="listbox">
 
 
-
-
-
           <div class="item active">
             <img class="d-block img-fluid" src="/owner/<?php echo $property['p_photo'] ?>" alt="First slide"
               width="100%" style="max-height: 600px; min-height: 600px;">
           </div>
-
-
 
 
         </div>
@@ -98,53 +56,66 @@ include('booking-engine.php');
           <div class="row">
             <div class="col-sm-6">
               <?php
-              $dataToPrint = ['Country' => 'country', 'Province' => 'province',
-               'Zone' => 'zone','District'=>'district','City'=>'city',
-               'VDC/Municipality'=>'vdc_municipality','Ward No.'=>'ward_no',
-               'Tole'=>'tole','Contact No'=>'contact_no',
-               'Estimated Price'=>'estimated_price'];
+              $dataToPrint = [
+                'Country' => 'country',
+                'Province' => 'province',
+                'Zone' => 'zone',
+                'District' => 'district',
+                'City' => 'city',
+                'VDC/Municipality' => 'vdc_municipality',
+                'Ward No.' => 'ward_no',
+                'Tole' => 'tole',
+                'Contact No' => 'contact_no',
+                'Estimated Price' => 'estimated_price'
+              ];
               ?>
 
 
               <table>
-              <?php foreach($dataToPrint as $label=>$key){?>
-                <tr>
-                  <td>
-                    <h4 class="simple"><?php echo $label ?>:</h4>
-                  </td>
-                  <td>
-                    <h4 class="simple">
-                      <?php echo $property[$key]; ?>
-                    </h4>
-                  </td>
-                </tr>
-                <?php }?>
+                <?php foreach ($dataToPrint as $label => $key) { ?>
+                  <tr>
+                    <td>
+                      <h4 class="simple"><?php echo $label ?>:</h4>
+                    </td>
+                    <td>
+                      <h4 class="simple">
+                        <?php echo $property[$key]; ?>
+                      </h4>
+                    </td>
+                  </tr>
+                <?php } ?>
               </table>
             </div>
           </div>
         </div>
 
         <div class="col-sm-6">
-        <?php
-              $dataToPrint = ['Total Rooms' => 'total_rooms', 'Bedrooms' => 'bedrooms',
-               'Living Room' => 'living_room','Kitchen'=>'kitchen','Bathroom'=>'bathroom',
-               'booked'=>'booked','Description.'=>'description'];
-              ?>
+          <?php
+          $dataToPrint = [
+            'Total Rooms' => 'total_rooms',
+            'Bedrooms' => 'bedrooms',
+            'Living Room' => 'living_room',
+            'Kitchen' => 'kitchen',
+            'Bathroom' => 'bathroom',
+            'booked' => 'booked',
+            'Description.' => 'description'
+          ];
+          ?>
           <table>
-          <?php foreach($dataToPrint as $label=>$key){?>
-            
-            <tr>
-              <td>
-                <h4 class="simple">Total Rooms:</h4>
-              </td>
-              <td>
-                <h4 class="simple">
-                  <?php echo $property['total_rooms']; ?>
-                </h4>
-              </td>
-            </tr>
-            <?php }?>
-           
+            <?php foreach ($dataToPrint as $label => $key) { ?>
+
+              <tr>
+                <td>
+                  <h4 class="simple">Total Rooms:</h4>
+                </td>
+                <td>
+                  <h4 class="simple">
+                    <?php echo $property['total_rooms']; ?>
+                  </h4>
+                </td>
+              </tr>
+            <?php } ?>
+
           </table>
         </div>
       </div>
@@ -156,100 +127,95 @@ include('booking-engine.php');
 
   <?php
 
-//booking button to book the book
+  //booking button to book the book
   if ($auth) {
     ?>
-    <form method="POST" action="">
+    <div method="POST" action="">
       <div class="row">
         <div class="col-sm-6">
           <?php
           $booked = $property['booked'];
 
           if ($booked == 'No') { ?>
-            <input type="hidden" name="property_id" value="<?php echo $property['property_id']; ?>">
-            <input type="submit" class="btn btn-lg btn-primary" name="book_property" style="width: 100%"
+            <input type="hidden" name="id" value="<?php echo $property['id']; ?>">
+            <input id="book_btn" type="submit" class="btn btn-lg btn-primary" name="book_property" style="width: 100%"
               value="Book Property">
           <?php } else { ?>
             <input type="submit" class="btn btn-lg btn-primary" style="width: 100%" value="Property Booked" disabled>
           <?php } ?>
         </div>
 
-    </form>
-
-
-    <form method="POST" action="../roomsewa/chat/index.php">
-      <div class="col-sm-6">
-        <input type="hidden" name="sender_id" value="<?php echo $tenant_id; ?>">
-        <input type="hidden" name="receiver_id" value="<?php echo $rows['owner_id']; ?>">
-        <input type="submit" class="btn btn-lg btn-success" name="send_message" style="width: 100%" value="Send Message">
-
       </div>
-    </form>
-  </div>
 
-<?php } else {
+
+        <a href="/profile/<?php echo $property['user_id']  ?>">
+        <button style="margin: 10px;" class="btn btn-lg btn-secondary">Visit Owner Profile</button>
+        </a>
+
+      <a class="btn btn-primary" href="/message/<?php echo $property['user_id'] ?>">Send Message</a>
+        
+    </div>
+
+ 
+
+  <?php } else {
     echo "<center><p class='notification'>You should login to book property</p></center>";
   }
 
 
   ?>
 
-<br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-<!-- map code started here -->
-<script type='text/javascript'
-  src='https://www.bing.com/api/maps/mapcontrol?key=AlSfV3wSTlPFqxEdS97v1d1ZK25Qg4OxZerOAjFYQPZwtY4bQqhz4jDRou_kCmbJ&callback=loadMap'
-  async defer></script>
-<style>
-  #map {
-    height: 300px;
-    width: 100%;
-    border-radius: 10px;
-    border-width: 5px;
-    border-color: green;
-  }
-</style>
-<!-- map here -->
-<div id="map">
-  <script>
-    function loadMap() {
-      <?php
-
-      $latitude = $property['latitude'];
-      $longitude = $property['longitude'];
-      ?>
-      var map = new Microsoft.Maps.Map('#map', {
-        credentials: 'AlSfV3wSTlPFqxEdS97v1d1ZK25Qg4OxZerOAjFYQPZwtY4bQqhz4jDRou_kCmbJ',
-        center: new Microsoft.Maps.Location(<?php echo $latitude; ?>, <?php echo $longitude; ?>),
-        zoom: 5.5
-      });
-
-      // Fetch locations from the database and add markers to the map
+  <!-- map code started here -->
+  <script type='text/javascript'
+    src='https://www.bing.com/api/maps/mapcontrol?key=AlSfV3wSTlPFqxEdS97v1d1ZK25Qg4OxZerOAjFYQPZwtY4bQqhz4jDRou_kCmbJ&callback=loadMap'
+    async defer></script>
 
 
-      // Add marker using fetched data
-      addMarker(<?php echo $latitude; ?>, <?php echo $longitude; ?>);
+  <!-- map here -->
+  <div  id="map">
+    <script>
+      function loadMap() {
+        <?php
 
-      function addMarker(latitude, longitude) {
-        var location = new Microsoft.Maps.Location(latitude, longitude);
-        var pin = new Microsoft.Maps.Pushpin(location);
-        map.entities.push(pin);
+        $latitude = $property['latitude'];
+        $longitude = $property['longitude'];
+        ?>
+        var map = new Microsoft.Maps.Map('#map', {
+          credentials: 'AlSfV3wSTlPFqxEdS97v1d1ZK25Qg4OxZerOAjFYQPZwtY4bQqhz4jDRou_kCmbJ',
+          center: new Microsoft.Maps.Location(<?php echo $latitude; ?>, <?php echo $longitude; ?>),
+          zoom: 5.5
+        });
+
+        // Fetch locations from the database and add markers to the map
+
+
+        // Add marker using fetched data
+        addMarker(<?php echo $latitude; ?>, <?php echo $longitude; ?>);
+
+        function addMarker(latitude, longitude) {
+          var location = new Microsoft.Maps.Location(latitude, longitude);
+          var pin = new Microsoft.Maps.Pushpin(location);
+          map.entities.push(pin);
+        }
       }
-    }
 
-    // Load the map after the page has fully loaded
-    document.addEventListener('DOMContentLoaded', loadMap);
-  </script>
+      // Load the map after the page has fully loaded
+      document.addEventListener('DOMContentLoaded', loadMap);
+    </script>
 
 
+  </div>
+  <!-- map here -->
+
+  <br>
 </div>
-<!-- map here -->
-
-<br>
 
 
-
-</div>
 
 <div class="recommendation-loadmore">
 
@@ -291,8 +257,8 @@ include('booking-engine.php');
 
       <div class="row" id="post-review-box" style="display:none;">
         <div class="col-md-12">
-          <form accept-charset="UTF-8" method="POST">
-            <input name="property_id" type="hidden" value="<?php echo $property['property_id']; ?>">
+          <form accept-charset="UTF-8" action="/review" method="POST">
+            <input name="property_id" type="hidden" value="<?php echo $property['id']; ?>">
             <input id="ratings-hidden" name="rating" type="hidden">
             <textarea class="form-control animated" cols="50" id="new-review" name="comment"
               placeholder="Enter your review here..." rows="5"></textarea>
@@ -306,6 +272,8 @@ include('booking-engine.php');
           </form>
         </div>
       </div>
+
+      <script src="/public/js/book_review_animate.js"></script>
     <?php } else {
         echo "<center>You should login to review property.</center>";
       }
@@ -346,54 +314,38 @@ foreach ($reviews as $review) {
 
 
 
+<script>
+//this code is for booking the property
+var book_btn = document.getElementById('book_btn');
+var tempColor = book_btn.style.backgroundColor;
+var tempText = book_btn.value;
+
+async function bookProperty() {
+  const form = new FormData();
+  book_btn.value = "Booking..."
+  book_btn.style.backgroundColor = "purple";
+
+  book_btn.style.backgroundColor = "purple";
+  form.append('id', <?php echo $property['id'] ?>);
+  const res = await fetch('/book_property', { method: 'POST', body: form });
+  const text = await res.text();
+  if (text == "ok") {
+    book_btn.value = "Property Booked";
+    book_btn.style.backgroundColor = tempColor;
+    book_btn.disabled = true;
+
+    alert("Thank you for booking the property");
+    return;
+  }//if
+  alert(res.body);
+  book_btn.value = tempText;
+  book_btn.style.backgroundColor = tempColor;
+
+}
+
+book_btn.addEventListener("click", bookProperty);
+
+</script>
 
 
 
-
-
-<style>
-  .simple {
-    font-size: 2.25rem;
-    color: black;
-    font-family: sans-serif;
-  }
-
-  h4 {
-    font-size: 20px;
-  }
-
-  .notification {
-    font-size: 2.5rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgba(255, 20, 25, 1);
-    color: white;
-    border-radius: 10px;
-    text-transform: capitalize;
-  }
-
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  td,
-  th {
-    text-align: left;
-    padding: 1px;
-  }
-</style>
-
-<style>
-  .animated {
-    -webkit-transition: height 0.2s;
-    -moz-transition: height 0.2s;
-    transition: height 0.2s;
-  }
-
-  .stars {
-    margin: 20px 0;
-    font-size: 24px;
-    color: #d17581;
-  }
-</style>

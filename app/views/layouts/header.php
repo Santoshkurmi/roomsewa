@@ -38,16 +38,16 @@
                 <?php
                 if ( $auth) {
                     ?>
-                    <li><a href="./chat/messages.php"><i class="fa-solid fa-message" style="color: #080808;"></i></a></li>
+                    <li><a href="/messages"><i class="fa-solid fa-message" style="color: #080808;"></i></a></li>
                     <li id="notification-bell"><a><i class="fa-solid fa-bell"></i></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span
                                 class="glyphicon glyphicon-user"></span> My Profile
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="profile.php">Profile</a></li>
+                            <li><a href="/profile/">Profile</a></li>
                             <li><a href="preference_collection.php">Preferences</a></li>
-                            <li><a href="booked-property.php">Booked Property</a></li>
+                            <li><a href="/booked_property">Booked Property</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>
                     </li>

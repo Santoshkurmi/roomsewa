@@ -1,0 +1,84 @@
+.recommendation-loadmore {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+
+  }
+
+  .myclass {
+    box-shadow: black;
+    border-radius: 10px;
+    stop-color: red;
+    color: hotpink;
+    background-color: black;
+    font-size: 2.5rem;
+
+  }
+
+  .myclass :hover {
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+
+  }
+
+  .design {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+
+  }
+
+  #map {
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: green;
+  }
+
+  .simple {
+    font-size: 2.25rem;
+    color: black;
+    font-family: sans-serif;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .notification {
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(255, 20, 25, 1);
+    color: white;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    text-align: left;
+    padding: 1px;
+  }
+
+  .animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+  }
+
+  .stars {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
+  }

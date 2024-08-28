@@ -6,16 +6,75 @@ use Phphelper\Core\Request;
 use Phphelper\Core\Response;
 
 class PropertyController{
+
+
+    public function bookedProperty(Request $request,Response $response){
+
+        $id = $request->getUser()->id;
+        $db = $request->getDatabase();
+         
+        $properties = $db->fetchAllSql('SELECT * from ( SELECT p.* from booking b join properties p on p.id = b.property_id where b.user_id = ?)  pb join  property_photo pp on pb.id = pp.property_id',[$id]);
+
+        // print_r($properties);
+        return $response->render('property/booked_property',['properties'=>$properties]);
+    }//view Property
+
+    public function reviewProperty(Request $request,Response $response){
+
+        $property_id = $request->property_id;
+        $comment = $request->comment;
+        $rating = $request->rating;
+
+        if(!$comment || !$rating){
+            die("Please input some comment and rating");
+        }
+        $user_id = $request->getUser()->id;
+
+        $db = $request->getDatabase();
+
+        $isInserted = $db->insert('reviews',['property_id'=>$property_id,'comment'=>$comment,'rating'=>$rating,'user_id'=>$user_id]);
+        return $response->redirect(null,['msg'=>"Thank you for giving review"]);
+    }//view Property
+
+
+    public function bookProperty(Request $request,Response $response){
+
+        $prop_id = $request->id;
+        $user_id = $request->getUser()->id;
+
+        $db = $request->getDatabase();
+
+        $property = $db->fetchOne('properties',['id'=>$prop_id]);
+        if(!$property){
+            die("This property does not exits");
+        }
+        if(!$property['booked'] == "Yes"){
+            die("This property is already booked");
+        }
+
+        $isUpdated = $db->update('properties',['booked'=>'Yes'],['id'=>$prop_id]);
+        if(!$isUpdated) die("Something went wrong booking the property");
+
+        $isInserted = $db->insert('booking',['property_id'=>$prop_id,'user_id'=>$user_id]);
+        if(!$isInserted) die("Something went wrong booking th property");
+
+        echo "ok";
+        return;
+
+    }//view Property
+
+
+
     public function viewProperty(Request $request,Response $response,$params){
 
         $id = $params->id;
         $db = $request->getDatabase();
-        $property = $db->fetchOneSql('SELECT ap.* , pp.p_photo from add_property as ap inner join property_photo as pp on ap.property_id = pp.property_id where ap.property_id = ?',[$id]);
+        $property = $db->fetchOneSql('SELECT ap.* , pp.p_photo from properties as ap inner join property_photo as pp on ap.id = pp.property_id where ap.id = ?',[$id]);
         if(!$property){
             die("Property not found");
         }
         // SELECT * from review where property_id='$property_id
-        $reviews = $db->fetchAll('review',['property_id'=>$id]);
+        $reviews = $db->fetchAll('reviews',['property_id'=>$id]);
         
         return $response->render('property/view_property',['property'=>$property,'reviews'=>$reviews]);
 
@@ -29,7 +88,7 @@ class PropertyController{
 
         $conditions = array();
 
-        $sql = "SELECT ap.* , pp.p_photo from add_property as ap left join property_photo as pp on ap.property_id = pp.property_id where";
+        $sql = "SELECT ap.* , pp.p_photo from properties as ap left join property_photo as pp on ap.id = pp.property_id where";
 
         // Add conditions based on search input
         if (!empty($search_property)) {

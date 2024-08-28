@@ -742,6 +742,9 @@
     });
   });
 </script>
+
+
+
 <script>
   $(document).ready(function () {
     // Get the PHP variable value and use it in the AJAX call

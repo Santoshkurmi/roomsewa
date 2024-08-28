@@ -28,7 +28,7 @@ function renderSearchData(datas= []) {
     datas.forEach((each)=> {
         var child = card_template.cloneNode(true);
         child.style.display = "block";
-        id = each['property_id'];
+        id = each['id'];
 
         if( rendered_ids.includes(id) ) return;
         rendered_ids.push(id);
