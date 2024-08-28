@@ -1,0 +1,289 @@
+     /* Your existing CSS styles */
+
+
+     body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: white;
+
+    }
+
+    .container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f0f0f0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+
+    }
+
+    h3 {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    hr {
+        border: 1px solid #ccc;
+    }
+
+    form {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+        position: relative;
+        /* Added  */
+    }
+
+    .form-group input[type="password"] {
+        padding-right: 30px;
+        /* space for icons */
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-control {
+        width: calc(100% - 30px);
+        /* Adjusted */
+        padding: 3px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 9px;
+    }
+
+    select,
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #output_image {
+        max-width: 50%;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    .btn {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        color: #fff;
+        background-color:#5cb85c;
+        border: 1px solid #5cb85c;
+        border-radius: 5px;
+        transition: background-color 0.8s ease, color 0.8s ease;
+    }
+
+    .btn:hover {
+        background-color: #4cae4c;
+        transform: scale(1.05);
+        border: #5cb85c;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #0056b3;
+    }
+
+    .text-right {
+        margin-top: 20px;
+    }
+    .text-right a{
+        color: #5cb85c;
+    }
+
+    /*Fullname and email icons */
+
+    .form-group input{
+        padding-right: 30px;
+        position: relative;
+        box-sizing: border-box;
+    }
+    #name-icon,
+    #email-icon {
+        font-size: 20px;
+        /* Size of the icons */
+        display: flex;
+        color: red;
+        /* Default color for icons */
+        position: absolute;
+        margin-bottom: 12px;
+        right: 12px;
+        top: 83%;
+        transform: translateY(-50%);
+    }
+
+    #name-icon .fa-circle-check,
+    #email-icon .fa-circle-check,
+    #name-icon .fa-circle-exclamation,
+    #email-icon .fa-circle-exclamation {
+        /* position: absolute; */
+        visibility: hidden;
+        /* Hide both icons by default */
+    }
+
+    #name-icon .fa-circle-check,
+    #email-icon .fa-circle-check {
+        color: green;
+    }
+
+    #name-icon .fa-circle-exclamation,
+    #email-icon .fa-circle-exclamation {
+        color: red;
+    }
+
+
+    .message {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 18px;
+        font-size: 15px;
+        color: red;
+    }
+
+
+    /* Password icons */
+    #password-icon,
+    #confirm-password-icon {
+        font-size: 20px;
+        /* Size of the icons */
+        display: inline-block;
+        color: red;
+        /* Default color for icons */
+        position: relative;
+        margin-bottom: 12px;
+        margin-left: -17px;
+    }
+
+    #password-icon .fa-circle-check,
+    #password-icon .fa-circle-exclamation,
+    #confirm-password-icon .fa-circle-check,
+    #confirm-password-icon .fa-circle-exclamation {
+        position: absolute;
+        visibility: hidden;
+        /* Hide both icons by default */
+    }
+
+    #password-icon .fa-circle-check,
+    #confirm-password-icon .fa-circle-check {
+        color: green;
+    }
+
+    #password-icon .fa-circle-exclamation,
+    #confirm-password-icon .fa-circle-exclamation {
+        color: red;
+    }
+
+    #password-message,
+    #confirm-password-message,
+    #password-strength {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 27px;
+        margin-top: -15px;
+        font-size: 15px;
+        color: red;
+    }
+
+    /* Adjust toggle password icon positioning */
+    .toggle-password {
+        position: relative;
+        /* top: 40%; */
+        left: 600px;
+        transform: translateY(-180%);
+        cursor: pointer;
+        color: #333;
+    }
+
+
+    /* For Phone Number */
+    #phone-icon {
+        font-size: 20px;
+        /* Size of the icons */
+        display: flex;
+        color: red;
+        /* Default color for icons */
+        position: absolute;
+        margin-bottom: 12px;
+        right: 12px;
+        top: 53%;
+        transform: translateY(-50%);
+    }
+
+    #phone-icon .fa-circle-check,
+    #phone-icon .fa-circle-exclamation {
+        /* position: absolute */
+        visibility: hidden;
+        /* Hide both icons by default */
+    }
+
+    #phone-icon .fa-circle-check {
+        color: green;
+    }
+
+    #phone-icon .fa-circle-exclamation {
+        color: red;
+    }
+
+    #phone-message {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 18px;
+        font-size: 15px;
+        color: red;
+    }
+
+    /* Address validation icons */
+    #address-icon {
+        font-size: 20px;
+        /* Size of the icons */
+        display: flex;
+        color: red;
+        /* Default color for icons */
+        position: absolute;
+        margin-bottom: 12px;
+        right: 12px;
+        top: 53%;
+        transform: translateY(-50%);
+    }
+
+    #address-icon .fa-circle-check,
+    #address-icon .fa-circle-exclamation {
+        /* position: absolute; */
+        visibility: hidden;
+    }
+
+    #address-icon .fa-circle-check {
+        color: green;
+    }
+
+    #address-icon .fa-circle-exclamation {
+        color: red;
+    }
+
+    #address-message {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 18px;
+        font-size: 15px;
+        color: red;
+    }

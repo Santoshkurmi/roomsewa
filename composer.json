@@ -1,0 +1,20 @@
+{
+    "name": "sunil/roomsewa",
+    "description": "This is my project about roomsewa",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sunil Bhattarai",
+            "email": "sunilbhattarai131@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "phphelper/phphelper": "^3.0"
+    }
+}

@@ -1,0 +1,159 @@
+
+    /* Styling for the tab content */
+    .tab-content {
+        padding: 20px;
+      }
+  
+      .card {
+        width: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+      }
+  
+      .card img {
+        padding-top: 20px;
+        width: 100%;
+        height: auto;
+      }
+  
+      .card h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+  
+      .card p {
+        margin-bottom: 5px;
+      }
+  
+      .card button {
+        background-color: #5bc0de;
+        color: #123702;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        margin: 10px;
+      }
+  
+      /* Styling for the modal */
+      .modal-content {
+        border-radius: 20px;
+      }
+  
+      .modal-header {
+        background-color: #5bc0de;
+        color: #fff;
+      }
+  
+      .modal-body form {
+        margin-bottom: 20px;
+      }
+  
+      .modal-body img {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .modal-footer {
+        background-color: #f5f5f5;
+      }
+  
+     
+      /* Styling for the "View Property" tab content */
+      #menu2 {
+        padding: 20px;
+      }
+  
+  
+      .card-a {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+  
+      .image-a {
+        width: 100%;
+        height: auto;
+      }
+  .xutai{
+    margin-left: 425px;
+    align-items: center;
+  }
+      .card-a h4 {
+        font-size: 1.2em;
+        align-items: center;
+        margin-left: 100px ;
+      }
+  
+      .card-a p {
+        align-items: center;
+        margin-left: 100px;
+      }
+  
+      .btn-a {
+        background-color: #5bc0de;
+        color: #fff;
+        border: none;
+        
+      
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        cursor: pointer;
+      }
+  
+      /* Optional: Adding some spacing between the cards */
+      .container-fluid .col-sm-2-a {
+        margin-bottom: 20px;
+      }
+  
+      /* Optional: Adding hover effect to the cards */
+      .card-a:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+      /* Styling for the "Booked Property" tab content */
+  #menu6 {
+    padding: 20px;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Optional: Adding some spacing between the table and other elements */
+  .container {
+    margin-bottom: 20px;
+  }
+  
+  
