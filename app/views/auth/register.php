@@ -1,5 +1,5 @@
 
-    <link rel="stylesheet" href="/style/register.css" class="css">
+    <link rel="stylesheet" href="/public/css/register.css" class="css">
 
 
     <div class="container">
@@ -104,7 +104,9 @@
 
     <!-- Font Awesome CDN link -->
     <script href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <!-- <script src="/script/register.js"></script> -->
+
+    <!-- <script src="/public/js/register.js"></script> -->
+
 
 
 </body>

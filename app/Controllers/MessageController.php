@@ -4,8 +4,11 @@
 namespace App\Controllers;
 use Phphelper\Core\Request;
 use Phphelper\Core\Response;
+use Phphelper\Core\Router;
 
 class MessageController{
+
+    #[Router(path:'/messages', method:'GET')]
     public function messageProfiles(Request $request,Response $response){
 
         $db = $request->getDatabase();
@@ -21,6 +24,8 @@ class MessageController{
         return $response->render('message/message_profiles',['profiles'=>$users]);
     }//messageProfiles
 
+
+    #[Router(path:'/message/{id}', method:'GET')]
     public function messages(Request $request,Response $response,$params){
         $user_id = $request->getUser()->id;
         $other_id = $params->id;
@@ -41,6 +46,7 @@ class MessageController{
     }//messageProfiles
 
 
+    #[Router(path:'/send_message', method:'POST')]
     public function sendMessage(Request $request,Response $response){
        
         $other_id = $request->id;

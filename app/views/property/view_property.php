@@ -24,7 +24,7 @@
 
 
           <div class="item active">
-            <img class="d-block img-fluid" src="/owner/<?php echo $property['p_photo'] ?>" alt="First slide"
+            <img class="d-block img-fluid" src="/public/<?php echo $property['p_photo'] ?>" alt="First slide"
               width="100%" style="max-height: 600px; min-height: 600px;">
           </div>
 
@@ -93,7 +93,7 @@
           <?php
           $dataToPrint = [
             'Total Rooms' => 'total_rooms',
-            'Bedrooms' => 'bedrooms',
+            'Bedrooms' => 'bedroom',
             'Living Room' => 'living_room',
             'Kitchen' => 'kitchen',
             'Bathroom' => 'bathroom',
@@ -106,11 +106,11 @@
 
               <tr>
                 <td>
-                  <h4 class="simple">Total Rooms:</h4>
+                  <h4 class="simple"><?php echo $label ?>:</h4>
                 </td>
                 <td>
                   <h4 class="simple">
-                    <?php echo $property['total_rooms']; ?>
+                    <?php echo $property[$key]; ?>
                   </h4>
                 </td>
               </tr>

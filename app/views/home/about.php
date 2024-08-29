@@ -1,6 +1,6 @@
 
   
-    <link rel="stylesheet" href="/style/aboutus.css" class="css">
+    <link rel="stylesheet" href="/public/css/aboutus.css" class="css">
 
     <div class="about-us">
         <div class="container">
@@ -23,7 +23,7 @@
                     </div>
                     <a href="" class="btn">Learn More</a>
                 </div>
-                <img src="/images/about.jpg" alt="error">
+                <img src="/public/images/about.jpg" alt="error">
             </div>
         </div>
     </div>

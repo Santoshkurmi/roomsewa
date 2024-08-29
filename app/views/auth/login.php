@@ -4,14 +4,14 @@
 ?>
 
 
-    <link rel="stylesheet" href="/style/login.css" class="css">
+    <link rel="stylesheet" href="/public/css/login.css" class="css">
 
     <div class="container">
         <h3 style="font-weight: bold; text-align: center;"><?php echo $type == "owner" ? 'Owner': 'Tenant' ?> Login</h3>
         <hr><br><br>
         <form method="POST" action="/login">
             <div class="form-group">
-                <span><?php echo $error ?? '' ?></span>
+                <span style="color:red;"><?php echo $error ?? '' ?></span>
                 <label for="email">Email:</label>
                 <input type="text" value="<?php echo $email ?? '' ?>" class="form-control" id="email" placeholder="Enter email" name="email" >
             </div>
@@ -32,7 +32,7 @@
     </div>
 
 
-    <!-- <script src="./style/login.js"></script> -->
+    <!-- <script src="/public/js/login.js"></script> -->
    
    
 <script>

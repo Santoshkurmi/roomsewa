@@ -12,7 +12,7 @@ html {
 
 .bg {
     /* the image used */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/heroimagee.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/public/images/heroimagee.jpg");
     /* background-color: #ffc107; */
     /* Use a warm background color */
 

@@ -40,7 +40,7 @@
  
 
       <div class="card">
-        <img src="/images/tenantprofile.jpg" alt=""
+        <img src="/public/images/tenantprofile.JPG" alt=""
           style="height:250px; width: 250px; border:1px solid red; border-radius:125px; margin-top:5px">
         <h1><?php echo $profile['full_name']; ?></h1>
         <p class="title"><?php echo $profile['email']; ?></p>

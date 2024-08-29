@@ -3,8 +3,11 @@
 namespace App\Controllers;
 use Phphelper\Core\Request;
 use Phphelper\Core\Response;
+use Phphelper\Core\Router;
 
 class ProfileController{
+
+    #[Router(path:'/profile/{other_id?}', method:'GET')]
     public function getProfile(Request $request,Response $response,$params){
         
         $id = $params->other_id; 

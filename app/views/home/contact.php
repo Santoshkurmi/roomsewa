@@ -42,7 +42,7 @@
         }
 
         .bg {
-            background-image: url("images/logo3.gif");
+            background-image: url("/public/images/logo3.gif");
             background-color: #ffc107;
             /* Use a warm background color */
             height: 70%;

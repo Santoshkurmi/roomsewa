@@ -65,7 +65,7 @@
                     <p>If you want to sign in as a tenant click on tenant login button otherwise click on owner login button.</p><br><br>
                     <button type="submit" class="btn btn-info"  onclick="window.location.href='/login/tenant'">Tenant Login</button>
                     <button type="submit" class="btn btn-info"  onclick="window.location.href='/login/owner'">Owner Login</button>
-                    <button type="submit" class="btn btn-info"  onclick="window.location.href='./admin/login'">Admin Login</button>
+                    <button type="submit" class="btn btn-info"  onclick="window.location.href='/admin/login'">Admin Login</button>
                 </div>
             </div>
         </div>

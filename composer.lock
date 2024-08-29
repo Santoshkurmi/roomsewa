@@ -70,16 +70,16 @@
         },
         {
             "name": "phphelper/phphelper",
-            "version": "v3.1.0",
+            "version": "v3.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Santoshkurmi/phpbare.git",
-                "reference": "8efd7deedc9fd07c7589a3530a14ceacf79a70fd"
+                "reference": "3b5e41bcc9f7d138966db84f9fb133082c9296f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Santoshkurmi/phpbare/zipball/8efd7deedc9fd07c7589a3530a14ceacf79a70fd",
-                "reference": "8efd7deedc9fd07c7589a3530a14ceacf79a70fd",
+                "url": "https://api.github.com/repos/Santoshkurmi/phpbare/zipball/3b5e41bcc9f7d138966db84f9fb133082c9296f0",
+                "reference": "3b5e41bcc9f7d138966db84f9fb133082c9296f0",
                 "shasum": ""
             },
             "require": {
@@ -101,9 +101,9 @@
             "description": "This is a simpler helpers classes to create a better web application using php. This is intentend to be use for devlopment only for learning purpose using xampp or others. This provides routing,data passing, separation of code using mvc pattern. This is not optmize for production level. Its only for beginner who don't want to use library like laravel or etc",
             "support": {
                 "issues": "https://github.com/Santoshkurmi/phpbare/issues",
-                "source": "https://github.com/Santoshkurmi/phpbare/tree/v3.1.0"
+                "source": "https://github.com/Santoshkurmi/phpbare/tree/v3.3.3"
             },
-            "time": "2024-08-28T04:43:59+00:00"
+            "time": "2024-08-29T04:37:17+00:00"
         },
         {
             "name": "phpmailer/phpmailer",

@@ -4,10 +4,14 @@
 namespace App\Controllers;
 use Phphelper\Core\Request;
 use Phphelper\Core\Response;
+use Phphelper\Core\Router;
 
 class PropertyController{
 
 
+
+
+    #[Router(path:'/booked_property', method:'GET')]
     public function bookedProperty(Request $request,Response $response){
 
         $id = $request->getUser()->id;
@@ -19,6 +23,10 @@ class PropertyController{
         return $response->render('property/booked_property',['properties'=>$properties]);
     }//view Property
 
+
+
+
+    #[Router(path:'/review', method:'POST')]
     public function reviewProperty(Request $request,Response $response){
 
         $property_id = $request->property_id;
@@ -37,6 +45,10 @@ class PropertyController{
     }//view Property
 
 
+
+
+
+    #[Router(path:'/book_property', method:'POST')]
     public function bookProperty(Request $request,Response $response){
 
         $prop_id = $request->id;
@@ -65,6 +77,9 @@ class PropertyController{
 
 
 
+
+
+    #[Router(path:'/property/{id}', method:'GET')]
     public function viewProperty(Request $request,Response $response,$params){
 
         $id = $params->id;
@@ -80,6 +95,12 @@ class PropertyController{
 
     }//view Property
 
+    
+
+
+
+
+    #[Router(path:'/search_property', method:'POST')]
     public function searchProperty(Request $request,Response $response){
 
         $search_property = $request->search_property;
@@ -122,4 +143,7 @@ class PropertyController{
     }//view Property
 
 
+
+
+    
 }//proper cass

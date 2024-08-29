@@ -3,9 +3,12 @@
 namespace App\Controllers;
 use Phphelper\Core\Request;
 use Phphelper\Core\Response;
+use Phphelper\Core\Router;
 
 class HomeController{
 
+
+    #[Router(path:'/', method:'GET')]
    public function home(Request $request,Response $response) {
 
         $db = $request->getDatabase();
@@ -13,6 +16,8 @@ class HomeController{
         // print_r($properties);
         return $response->render('home/home',['properties'=>$properties]);
     }
+
+
 
 
 }//HomeController

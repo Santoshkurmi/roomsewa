@@ -61,7 +61,7 @@
 <?php foreach($properties as $property) {?>
     <div class="card">
         <?php if (isset($property['p_photo'])) { ?>
-        <img class="image" src="owner/<?php echo $property['p_photo'] ?>" alt="Property Image">
+        <img class="image" src="/public/<?php echo $property['p_photo'] ?>" alt="Property Image">
         <?php } ?>
         <div class="label">
                     <span class="label available"><?php echo $property['booked'] == "No"? 'Available': 'Booked' ?></span>

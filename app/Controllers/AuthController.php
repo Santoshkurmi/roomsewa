@@ -5,22 +5,27 @@ use App\Helpers\MailSender;
 use App\Helpers\Validation;
 use Phphelper\Core\Request;
 use Phphelper\Core\Response;
+use Phphelper\Core\Router;
 
 class AuthController{
+
+    #[Router(path:'/login/{type?}', method:'GET')]
     public function loginPage(Request $request,Response $response,$params){
         $type = $params->type;
         return $response->render('auth/login',['type'=>$type]);       
     }//loginPage
 
+
+    #[Router(path:'/register/{type?}', method:'GET')]
     public function registerPage(Request $request,Response $response,$params){
         $type = $params->type;
         return $response->render('auth/register',['type'=>$type]);       
     }//loginPage
 
+ 
 
 
-
-
+    #[Router(path:'/register', method:'POST')]
     public function register(Request $request,Response $response){
 
         $db = $request->getDatabase();
@@ -76,6 +81,7 @@ class AuthController{
 
 
 
+    #[Router(path:'/login', method:'POST')]
     public function login(Request $request,Response $response){
         $email = $request->email;
         $password = $request->password;
@@ -98,7 +104,7 @@ class AuthController{
 
 
 
-
+    #[Router(path:'/verify_email/{id}', method:'GET')]
     public function getVerifyEmail(Request $request,Response $response,$params){
         $id = $params->id;
         $expiryMinutes = getenv('OTP_EXPIRY_DURATION_MINUTES');
@@ -109,6 +115,7 @@ class AuthController{
 
 
 
+    #[Router(path:'/verify_email', method:'POST')]
     public function verifyEmail(Request $request,Response $response){
         $id = $request->id;
         $verification_code = $request->verification_code;
@@ -149,6 +156,7 @@ class AuthController{
 
 
     
+    #[Router(path:'/resend_otp', method:'POST')]
     public function resendOtp(Request $request,Response $response){
         $user_id = $request->id;
         $db = $request->getDatabase();
@@ -188,6 +196,7 @@ class AuthController{
 
 
 
+    #[Router(path:'/logout', method:'GET')]
     public function logout(Request $request,Response $response){
        $request->logout();
        return $response->redirect('/');

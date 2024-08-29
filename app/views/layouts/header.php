@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/style/navbar.css" class="css">
+    <link rel="stylesheet" href="/public/css/navbar.css" class="css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script> -->
@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
         <div class="container-fluid">
             <a class="navbar-header" href="/">
-                <img src="/images/mainlogo.png" alt="logo">
+                <img src="/public/images/mainlogo.png" alt="logo">
             </a>
 
             <ul class="nav navbar-nav">
